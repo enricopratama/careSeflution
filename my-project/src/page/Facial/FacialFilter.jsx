@@ -224,7 +224,7 @@ const Step1 = ({ prod, setProd }) => {
       {/* progress bar */}
 
       <div className="text-2xl text-black font-bold mb-6">
-        Select the options that apply to your hair type
+        What is your preferred hair <span className="font-bold">type?</span>
       </div>
       <div className="">
         <RadioGroup value={prod} onChange={setProd} className="mt-2">
