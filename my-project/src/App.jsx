@@ -12,11 +12,20 @@ import Facial from "./page/Facial"
 import Mua from "./page/Mua"
 import Mani from "./page/Mani"
 import Waxing from "./page/Waxing"
+import Navbar from "./components/Navbar"
+import Footer from "./components/Footer"
+import History from "./page/History"
+
+import Favorites from "./page/Favorites"
+import Confirmation from "./page/Confirmation"
+
+
 
 
 function App() {
   return (
     <Router>
+      <Navbar/>
       <Routes>
         <Route index element={<Home />} />
         <Route path="/" element={<Home />} />
@@ -31,8 +40,15 @@ function App() {
         <Route path="/mua" element={<Mua />} />
         <Route path="/mani" element={<Mani />} />
         <Route path="/waxing" element={<Waxing />} />
+        <Route path="/history" element={<History />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/favorites" element={<Favorites />} />
+        <Route path="/confirmation" element={<Confirmation />} />
+
+
 
       </Routes>
+      <Footer />
     </Router>
   )
 }

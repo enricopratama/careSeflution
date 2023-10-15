@@ -6,23 +6,24 @@ import { Link } from "react-router-dom"
 
 const people = [
   {
-    name: "Lindsay Walton",
+    name: "Theophila Abigail",
+    role: "I am a professional hair stylist with 10 years of experience.",
+    imageUrl:
+      "https://images.pexels.com/photos/6929164/pexels-photo-6929164.jpeg?auto=compress&cs=tinysrgb&w=800",
+  },
+  {
+    name: "Eugene Wongso",
     role: "I am a professional hair stylist with 10 years of experience.",
     imageUrl:
       "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
   },
   {
-    name: "Stephanny Kusmana",
+    name: "Steven Wilbert",
     role: "I am a professional hair stylist with 10 years of experience.",
     imageUrl:
-      "https://images.pexels.com/photos/3065209/pexels-photo-3065209.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://images.pexels.com/photos/7092613/pexels-photo-7092613.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
-  {
-    name: "Mellvin Chia",
-    role: "I am a professional hair stylist with 10 years of experience.",
-    imageUrl:
-      "https://images.pexels.com/photos/1805600/pexels-photo-1805600.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
+  
   // More people...
 ]
 
@@ -32,7 +33,7 @@ const FilterResult = () => {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Pick your hairstylist!
+            Your Favorite Experts!
           </h2>
         </div>
         <ul
