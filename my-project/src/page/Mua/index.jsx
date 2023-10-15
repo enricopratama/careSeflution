@@ -1,4 +1,4 @@
-import MuaFilter from "./HaircutFilter"
+import MuaFilter from "./MuaFilter"
 
 const Mua = () => {
   return (

@@ -5,6 +5,7 @@ import Haircut from "./page/Haircut"
 import Massage from "./page/Massage"
 import Facial from "./page/Facial"
 import Mua from "./page/Mua"
+import Mani from "./page/Mani"
 import Waxing from "./page/Waxing"
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
     <Router>
       <Routes>
         <Route index element={<Home />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/haircut" element={<Haircut />} />
         <Route path="/massage" element={<Massage />} />
         <Route path="/facial" element={<Facial />} />
