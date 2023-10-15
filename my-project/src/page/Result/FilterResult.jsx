@@ -28,7 +28,7 @@ const people = [
 
 const FilterResult = () => {
   return (
-    <Link to="/profile" className="bg-white py-24 sm:py-32">
+    <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -47,11 +47,14 @@ const FilterResult = () => {
                 key={person.name}
                 className="bg-beige-500 shadow-lg rounded-xl relative text-md"
               >
-                <img
-                  className="aspect-[3/2] w-full rounded-t-2xl object-cover"
-                  src={person.imageUrl}
-                  alt=""
-                />
+                <Link to = "/profile">
+                  <img
+                    className="aspect-[3/2] w-full rounded-t-2xl object-cover"
+                    src={person.imageUrl}
+                    alt=""
+                  />
+                </Link>
+                
 
                 {/* Heart icon overlay */}
                 <div className="absolute top-2 right-2 mx-4 my-4">
@@ -63,26 +66,30 @@ const FilterResult = () => {
                   />
                 </div>
 
-                <h3 className="mt-6 text-lg text-left ml-4 font-semibold leading-8 tracking-tight text-gray-900">
-                  {person.name}
-                </h3>
-                <div className="flex flex-row ml-4 my-2">
-                  <AiFillStar className="fill-yellow-500" />
-                  <AiFillStar className="fill-yellow-500" />
-                  <AiFillStar className="fill-yellow-500" />
-                  <AiFillStar className="fill-yellow-500" />
-                  <AiFillStar className="fill-yellow-500" />
-                </div>
+                <Link to = "/profile">
+                  <h3 className="mt-6 text-lg text-left ml-4 font-semibold leading-8 tracking-tight text-gray-900">
+                    {person.name}
+                  </h3>
+                  <div className="flex flex-row ml-4 my-2">
+                    <AiFillStar className="fill-yellow-500" />
+                    <AiFillStar className="fill-yellow-500" />
+                    <AiFillStar className="fill-yellow-500" />
+                    <AiFillStar className="fill-yellow-500" />
+                    <AiFillStar className="fill-yellow-500" />
+                  </div>
 
-                <p className="text-base leading-7 text-gray-600 text-left mx-4 mb-4">
-                  {person.role}
-                </p>
+                  <p className="text-base leading-7 text-gray-600 text-left mx-4 mb-4">
+                    {person.role}
+                  </p>
+                </Link>
+
+                
               </li>
             )
           })}
         </ul>
       </div>
-    </Link>
+    </div>
   )
 }
 
