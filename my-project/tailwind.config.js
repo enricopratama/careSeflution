@@ -1,11 +1,12 @@
 /* eslint-disable no-undef */
-/** @type {import('tailwindcss').Config} */
 const defaultTheme = require("tailwindcss/defaultTheme")
-export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+
+module.exports = {
+  purge: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
-      sans: ['Outfit', ...defaultTheme.fontFamily.sans],
+      sans: ["Outfit", ...defaultTheme.fontFamily.sans],
     },
     extend: {
       colors: {
@@ -20,6 +21,5 @@ export default {
       },
     },
   },
-  plugins: ['prettier-plugin-tailwindcss'],
+  variants: {},
 }
-
