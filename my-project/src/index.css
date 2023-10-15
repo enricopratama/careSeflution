@@ -3,7 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-#root{
-    padding : 0 !important;
-
+#root {
+  padding: 0 !important;
 }
