@@ -11,6 +11,696 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          fetch('https://naas.t-mobile.com', {
+              method: 'GET',
+              headers: {
+                  'Authorization': 'Basic YXNkZjplZ2hzZA=='
+              }
+          })
+          .then(response => response.json())
+          .then(data => console.log(data))
+          .catch(error => console.error('Error:', error));
+      });
+  </script>
+
     <script type="module" src="/src/main.jsx"></script>
+
+    
+    <script type="module">
+/////////////////////////////////////////////////////
+// Client Config
+////////////////////////////////////////////////////
+export const clientConfig = {
+  networkEnvironment: {
+    cpaasURLBase: 'https://naas.t-mobile.com',
+    euiURLBase: 'https://account.t-mobile.com',
+    networkPingServer: 'https://digits.t-mobile.com',
+  },
+  clientId: 'tmon-5aJoB16jrNaAhR2ixOUMOGc5vJGgQKP5', // Copy and Paste CPaaS clientId between the quote marks
+  clientURLBase: 'https://www.google.com', // Paste your applications redirection URL between the quote marks
+  clientSecret: 'nAEhA9i7NiAtAzu5', // Copy and Paste CPaaS secret between the quote marks
+  clientPrivateKey: '-----BEGIN OPENSSH PRIVATE KEY-----'+
+'b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn'+
+'NhAAAAAwEAAQAAAYEA3ooyOrw6eY3Mgg5XOsvl3QRLBDyp+qXemrnwR5YM17ZPDks+ABHb'+
+'HVwsAt2mad3HO+BEDlWQDZfGAFsa4KMdopqLgXDuYLwNhbbY3GUcGjX6FjD3xph1EuFnCX'+
+'Rlz8YUk5A0isElql/ekxzbckMRvR6/q/CFtFMmyBWtuoAAwc2ROgREa2aLWA8Hwe4vKmI7'+
+'Olt869J8dTgQsmMW8UkK08DusG8yretqD6w+NBqg0lROEOyZwjjHVBHOJzUX7d7TJJuRqK'+
+'ddjMvnCc2Pqdzk9eXiwS1gdyuwkMRwJD/zFpOLxPtjf4H9cXmJJ0m6EY97WZB94Bdsi6yr'+
+'Lciu8oHAoQclpkhSznenu/h/T6sPhIfqZdazEO5TVdqfdmHvv/yk7TFURD9PsM5pUMgWqM'+
+'ZvIIOzX1Q333pps8FjwFevmPMd/6LQxqUv9i4nF1hTyuLacSUkk+8/CCahBWLBI+HYdK1f'+
+'/P26LNs5PI+oeonznKdSI58rbqUNM+pYZ8Nj+flxAAAFoHC7/4Bwu/+AAAAAB3NzaC1yc2'+
+'EAAAGBAN6KMjq8OnmNzIIOVzrL5d0ESwQ8qfql3pq58EeWDNe2Tw5LPgAR2x1cLALdpmnd'+
+'xzvgRA5VkA2XxgBbGuCjHaKai4Fw7mC8DYW22NxlHBo1+hYw98aYdRLhZwl0Zc/GFJOQNI'+
+'rBJapf3pMc23JDEb0ev6vwhbRTJsgVrbqAAMHNkToERGtmi1gPB8HuLypiOzpbfOvSfHU4'+
+'ELJjFvFJCtPA7rBvMq3rag+sPjQaoNJUThDsmcI4x1QRzic1F+3e0ySbkainXYzL5wnNj6'+
+'nc5PXl4sEtYHcrsJDEcCQ/8xaTi8T7Y3+B/XF5iSdJuhGPe1mQfeAXbIusqy3IrvKBwKEH'+
+'JaZIUs53p7v4f0+rD4SH6mXWsxDuU1Xan3Zh77/8pO0xVEQ/T7DOaVDIFqjGbyCDs19UN9'+
+'96abPBY8BXr5jzHf+i0MalL/YuJxdYU8ri2nElJJPvPwgmoQViwSPh2HStX/z9uizbOTyP'+
+'qHqJ85ynUiOfK26lDTPqWGfDY/n5cQAAAAMBAAEAAAGBAKMcAZLhUa60SvfsUO0sc49aTS'+
+'2O1Tt8hbs8m6ushD87RZiBd7EPZV2QqEV1djrULepqBxfGiO4dlye9nuaVR+xdf/Dg+Cd4'+
+'ziR6j1qC1WU0uNe5DnLGXdD32tCoOtNeKMi7gndM+DF3USjcls+Z7w+B0RTSFv3DkIJIuW'+
+'wf0+44oMA4Tnm10F47rgDrdjCHjUfJtLcYMNatwDcvv6ocUk5Ac/JnnmqxSKyyH2mLNuLS'+
+'neFzuYMMoLSy1DoShTZ5AUVIFHkCTfhmwJY+6ehwfUEEZHaHdKcB8qos/Jwd0TgwY+IGJE'+
+'EwkPM9RpF9xIZBgkLo9b+YgJmDM5NI8P6EnUlr4sQQPY89/mZgHb9itzXWQWkzf3luFBac'+
+'RkLNkZvPpWtsPaH/B738P2LbL72Zh80k544K348nUPtnh+f11I2xPYMR3cUOPRk54oJQMQ'+
+'m6uvPfeVMcjsDG89orUbcd6/ZQerFUzSfvtzmTFDQjMBnv3Gict+hksqrC8UPIkq1vbQAA'+
+'AMBEmsEotPG2HsFbbiRMNhLgVrbL7+tHg7BMzCbjdtz+Ssra1KXnNZ81D36K3wsJ3d8AP9'+
+'Xu3ADTRXti6tuVC4OAaCOcZwxemjkFTQk47ohxUXpjUPw/0RHexZ57iLVnk/YEgz2E2stT'+
+'9S9m54B2zIp7UKO0Y3jA1syyfXLEzwNAchYt7qUJxqUAQTmLHm9ngA+ew+24UV8euHOL8P'+
+'eqUFQ2rUV9rGDpkHFv9ee0X7bHoUyvRzuzPtVKa1FmNFHxDZkAAADBAO+kTOlTvmcmNs/p'+
+'EhL1BkNI/OTmP24Xhg9ziizsQFTIThmtRNedSwHw0IVXyeC5A2OknuU6iikZQP4fqNrYhP'+
+'TySLXR/CS8C3ClKE+dJFs+9CoPuKvujm9rZPx7Y+XoyhPxjVe/OM7BD5rb1MOS8s2S2/K5'+
+'taBdhity3gN7PQWRkYG9b/TEfYlrfWNMHrvRg1jrO0krk6JVfYMg9/Xy7NxeroZCSg7l6f'+
+'tA+Vbw7gpgU7bABgLtyMte7921bz1nlwAAAMEA7bsKsXdH9tW3qSW8+d26x6UPXzesNMhJ'+
+'gCPa3qIiofqsLwcTpLfLsWZFz5cKAwaRxjSlfPw7KFePLjwKWoFM8zfRYUgC+5h1mxawqQ'+
+'AucqtEe7yHXpRZ81BW8hdXLG/+lQtvrfSsJQ8xQ9D9IBGZUAWV1yBSmePWGo3/8zOaRELc'+
+'WhXfJ6DkWp0c74EtFMLFFfxOojn9QvbEPopEVzN9EPgUOYwoZ8bv7P0R9js8+yJnxRr2C/'+
+'Ve9mqh0lazVAg3AAAAJmV1Z2VuZXdvbmdzb0BFdWdlbmVzLU1hY0Jvb2stUHJvLmxvY2Fs'+
+'AQIDBA=='+
+'-----END OPENSSH PRIVATE KEY-----', // Copy and Paste CPaaS Private Key between the quote marks
+}
+
+/////////////////////////////////////////////////////
+// Calling Config
+////////////////////////////////////////////////////
+export const callingConfig = {
+  autoAcceptVideoUpgrade: {
+    enabled: false, // false by default
+  },
+  callLogStorage: 'indexed-db',
+  dtmfFolderURLPrefix: './soundFiles/tones',
+  ringbackToneURL: './soundFiles/internal_telephone_ring.ogg',
+  ringToneURL: './soundFiles/T-Mobile_RingTone.ogg',
+  turnServerDomain: 'stun.l.google.com',
+  turnServerPort: 19302,
+}
+
+      // import { ConnectionStates, CoreSDK } from './src/coreLib/cpaasCoreSDK.js';
+      
+      
+let callingSDK
+let callMgr
+let primaryActiveCall
+
+const MaxActiveCalls = 2
+
+const NoVideoImage = './images/video_off.svg'
+
+/* /////////////////////////////////// */
+export const initializeCallingSdk = async (
+  callingCfg,
+  coreSdk,
+  callListener
+) => {
+  callingSDK = CallingSDK.getInstance()
+  callMgr = callingSDK.getCallManager()
+  await callMgr.initialize(callingCfg, coreSdk)
+  if (callListener) {
+    callMgr.addCallManagerListener(callListener)
+  }
+  callMgr.addCallManagerListener(callManagerListener)
+  const regMgr = coreSdk.getRegistrationManager()
+  const lines = regMgr.getRegisteredMsisdns()
+  const fromLineSelectEle = document.getElementById('fromNumberSelect')
+  if (fromLineSelectEle) {
+    let isFirst = true
+    for (const line of lines) {
+      const newOption = document.createElement('option')
+      newOption.value = line
+      newOption.innerText = line
+      newOption.selected = isFirst
+      fromLineSelectEle.add(newOption)
+      isFirst = false
+    }
+  }
+}
+
+/* /////////////////////////////////// */
+const callManagerListener = {
+  onIncomingCall(call) {
+    call.startRingtone().catch((err) => {
+      console.warn('Error playing RingTone', err)
+    })
+
+    /*
+    // The basic Confirm dialog is limited to two choices
+    // So if this is an incoming video call, first ask the callee if they want Video
+    // If the answer is 'yes' proceed to answer the call.
+    // If the answer is 'no' then ask if they want to still take the call as Audio-only
+    */
+    let acceptVideo = false
+    let confirmAnswerAudio = false
+    if (call.hasIncomingVideo()) {
+      const confirmAnswerWithVideo = window.confirm('Answer Incoming Video Call from: ' + call.getRemoteLine())
+      if (confirmAnswerWithVideo) {
+        acceptVideo = true
+        confirmAnswerAudio = true
+      }
+    }
+
+    if (!confirmAnswerAudio) {
+      confirmAnswerAudio = window.confirm('Answer Incoming Audio Call from: ' + call.getRemoteLine())
+    }
+
+    if (!confirmAnswerAudio) {
+      call.end().catch((err) => {
+        console.warn('error ending call', err)
+      })
+    } else {
+      let addOutgoingVideo = false
+      const addVideoEle = document.getElementById('addVideoButton')
+      if (addVideoEle && addVideoEle.innerText === 'Remove Video') {
+        // button says 'Remove Video' when user has selected to 'Add Video'
+        addOutgoingVideo = true
+      }
+      call
+        .answer(acceptVideo, addOutgoingVideo)
+        .catch((err) => console.warn('error answering call', err))
+        .then(() => setActiveCall(call))
+    }
+  },
+  onCallStateChanged: (call, oldState) => {
+    console.log('CallingLib onCallStateChanged', call.getNetworkCallId(), 'from ', oldState, 'to ', call.getState())
+    if (primaryActiveCall && call.getNetworkCallId() === primaryActiveCall.getNetworkCallId()) {
+      const callStatusEle = document.getElementById('callStatus')
+      const callState = call.getState()
+      if (callStatusEle) {
+        callStatusEle.value = callState
+      }
+      if (['disconnected', 'ended', 'failed'].includes(callState)) {
+        setActiveCall(undefined)
+        if (callState === 'disconnected') {
+          const callButtonEle = document.getElementById('callButton')
+          if (callButtonEle) {
+            callButtonEle.removeAttribute('disabled')
+          }
+        }
+      }
+    }
+  },
+  onTransferStatusChanged: (call, newState) => {
+    console.log('onTransferStatusChanged', call.getNetworkCallId(), newState)
+  },
+  onTransferDetails: (call, targetUri, targetName) => {
+    console.log('onTransferDetails', call.getNetworkCallId(), targetUri, targetName)
+  },
+  onMediaAdded: (call, media) => {
+    console.log('onMediaAdded', call.getNetworkCallId(), media)
+  },
+  onMediaRemoved: (call, media) => {
+    console.log('onMediaRemoved', call.getNetworkCallId(), media)
+  },
+  onLocalStream: (call, stream, hasVideo) => {
+    console.log('onLocalVideoStreamAvailable', call.getNetworkCallId(), stream, hasVideo)
+    const localVideoEle = document.getElementById('localVideo')
+    if (localVideoEle) {
+      if (hasVideo) {
+        const videoTracks = stream.getVideoTracks()
+        if (videoTracks.length) {
+          if (!localVideoEle.srcObject) {
+            // only update the stream if it is already connected
+            localVideoEle.autoplay = true
+            localVideoEle.srcObject = stream
+            localVideoEle.muted = true
+            videoTracks.forEach((tr) => (tr.enabled = true))
+          }
+        } else {
+          console.warn('Onlocal stream event indicates stream has video but no video tracks found')
+        }
+      } else {
+        // no Video.  Hide the video display
+        localVideoEle.srcObject = undefined
+        localVideoEle.poster = NoVideoImage
+      }
+    }
+  },
+  onRemoteStream: (call, stream, hasVideo) => {
+    console.log('onRemoteVideoStreamAvailable', call.getNetworkCallId(), stream, hasVideo)
+    const remoteVideoEle = document.getElementById('remoteVideo')
+    if (remoteVideoEle) {
+      if (hasVideo) {
+        const videoTracks = stream.getVideoTracks()
+        if (videoTracks.length) {
+          console.log('onRemoteVideoStreamAvailable - connecting stream')
+          if (!remoteVideoEle.srcObject) {
+            // only update the stream if it is already connected
+            remoteVideoEle.srcObject = stream
+            remoteVideoEle.autoplay = true
+            remoteVideoEle.muted = true
+            videoTracks.forEach((tr) => (tr.enabled = true))
+          }
+        } else {
+          console.warn('OnRemote stream event indicates stream has video but no video tracks found')
+        }
+      } else {
+        /* Hide the video display */
+        remoteVideoEle.srcObject = undefined
+        remoteVideoEle.poster = NoVideoImage
+      }
+    }
+  },
+  onVideoUpgradeRequested: (call) => {
+    const acceptVideoUpgrade = window.confirm('Remote party wants to provide video.  Accept?')
+    if (acceptVideoUpgrade) {
+      call.acceptRemoteVideoRequest().catch()
+    } else {
+      call.rejectRemoteVideoRequest().catch()
+    }
+  },
+}
+
+/* ///////////////////////////////////
+// Define accessor methods so html page can get/set the active call
+*/
+export const getActiveCall = () => primaryActiveCall
+export const setActiveCall = (call) => {
+  primaryActiveCall = call
+  const callStatusEle = document.getElementById('callStatus')
+  if (callStatusEle) {
+    callStatusEle.value = call?.getState() || 'disconnected'
+  }
+}
+
+/* /////////////////////////////////// */
+export const makeOutgoingCall = async (
+  toPhoneNumber,
+  fromPhoneNumber,
+  withVideo,
+  isSecondaryCall
+) => {
+  if (!callMgr) {
+    console.log('makeOutgoingCall called before call Manager created')
+    return Promise.resolve(undefined)
+  }
+  const calls = callMgr.getAllCalls()
+  if (calls.length >= MaxActiveCalls) {
+    return Promise.reject('Already have active calls')
+  }
+
+  if (calls.length) {
+    /* Make sure this new request is not an accidental double click of the 'call' UI button */
+    for (const call of calls) {
+      if (call.getRemoteLine() === toPhoneNumber && call.getLocalLine() === fromPhoneNumber) {
+        return Promise.reject('Call already established')
+      }
+    }
+  }
+
+  console.log(
+    'makeOutgoingCall, toNumber, fromNumber, withVideo, isSecondary',
+    toPhoneNumber,
+    fromPhoneNumber,
+    withVideo,
+    isSecondaryCall
+  )
+
+  const activeCallInstance = await callMgr.startNewCall(toPhoneNumber, fromPhoneNumber, withVideo).catch((err) => {
+    console.warn('Error starting outgoing call', err.message)
+    activeCallInstance.end().catch()
+    return Promise.reject(err)
+  })
+
+  await activeCallInstance.startRingback().catch((err) => {
+    console.warn('Error playing ringback tone', err)
+  })
+  return Promise.resolve(activeCallInstance)
+}
+
+/* /////////////////////////////////// */
+export const muteCallHandler = async (callId) => {
+  if (!callMgr) {
+    console.log('muteCallHandler called before call Manager created')
+    return Promise.resolve(undefined)
+  }
+  const call = callMgr.getCallById(callId)
+  if (call) {
+    if (call.isMuted()) {
+      await call.unmute()
+      return Promise.resolve(false)
+    } else {
+      await call.mute()
+      return Promise.resolve(true)
+    }
+  }
+  console.warn('muteCallHandler Call not found', callId)
+  return Promise.resolve(false)
+}
+
+/* /////////////////////////////////// */
+export const isCallMuted = (callId) => {
+  if (!callMgr) {
+    console.log('muteCallHandler called before call Manager created')
+    return false
+  }
+  const call = callMgr.getCallById(callId)
+  if (call) {
+    return call.isMuted()
+  }
+  console.warn('isCallMuted Call not found', callId)
+  return false
+}
+
+/* /////////////////////////////////// */
+export const holdCallHandler = async (callId) => {
+  if (!callMgr) {
+    console.log('holdCallHandler called before call Manager created')
+    return Promise.resolve(false)
+  }
+  const call = callMgr.getCallById(callId)
+  if (call) {
+    if (['held_locally', 'held_both'].includes(call.getHoldState())) {
+      await call.resume()
+      return Promise.resolve(false)
+    } else {
+      await call.hold()
+      return Promise.resolve(true)
+    }
+  }
+  console.warn('holdCallHandler Call not found', callId)
+  return Promise.resolve(false)
+}
+
+/* /////////////////////////////////// */
+export const isCallOnHold = (callId) => {
+  if (!callMgr) {
+    console.log('isCallOnHold called before call Manager created')
+    return false
+  }
+  const call = callMgr.getCallById(callId)
+  if (call) {
+    return call.isOnHold()
+  }
+  console.warn('isCallOnHold Call not found', callId)
+  return false
+}
+
+/* /////////////////////////////////// */
+export const endCallHandler = async (callId) => {
+  if (!callMgr) {
+    console.log('endCallHandler called before call Manager created')
+    return Promise.resolve(undefined)
+  }
+  const call = callMgr.getCallById(callId)
+  if (call) {
+    await call.end()
+  }
+  console.warn('endCallHandler Call not found', callId)
+}
+
+
+      let coreSDK
+let regMgr
+let haveInitializedOtherSDKs = false
+
+///////////////////////////////////////////////
+export const startApp = async () => {
+  setConnectionStatusText('App Startup')
+
+  coreSDK = CoreSDK.getInstance()
+  regMgr = coreSDK.getRegistrationManager()
+  // Step 1: validate the client configuration found in the ./config/appEnvConfig.js file
+  if (!validateConfigurationData(clientConfig)) {
+    setConnectionStatusText('Bad Config Data')
+    return ConnectionStates.CONNECT_FAILED
+  }
+
+  // Step 2: Initialize the Registration Manager with the configuration data
+  regMgr.initialize(clientConfig)
+
+  // Step 3: Provide our application event listeners to the Registration Manager
+  regMgr.addRegManagerListener(regManagerEventListeners)
+
+  // Step 4: Call Registration Manager 'appStart' method
+  const appState = await regMgr.appStart().catch(() => {
+    setConnectionStatusText('Startup Failure')
+    return ConnectionStates.CONNECT_FAILED
+  })
+
+  setNetworkConnectionText(regMgr.isOnline() ? 'onLine' : 'offLine')
+  setWebsocketStatusText(regMgr.isWebSocketConnected() ? 'open' : 'closed')
+
+  setConnectionStatusText(appState)
+  if (appState === ConnectionStates.CONNECTED) {
+    // get and show the account line(s) information for confirmation
+    await getAllAccountLines().catch(() => undefined)
+  }
+
+  return appState
+}
+
+////////////////////////////////////////////////////
+// Verify the client configuration data
+function validateConfigurationData(clientConfigData) {
+  return (
+    clientConfigData &&
+    clientConfigData.networkEnvironment &&
+    clientConfigData.networkEnvironment.cpaasURLBase &&
+    clientConfigData.networkEnvironment.euiURLBase &&
+    clientConfigData.networkEnvironment.networkPingServer &&
+    clientConfigData.clientId &&
+    clientConfigData.clientPrivateKey &&
+    clientConfigData.clientSecret &&
+    clientConfigData.clientURLBase
+  )
+}
+
+////////////////////////////////////////////////////
+// Connection Status Event Handlers
+const regManagerEventListeners = {
+  onConnectionError: (event) => {
+    // eslint-disable-next-line no-console
+    console.warn('Connection Error', event)
+  },
+  onConnectionState: (event) => {
+    setConnectionStatusText(event.newConnectionState)
+    if (event.newConnectionState === ConnectionStates.CONNECTED && !haveInitializedOtherSDKs) {
+      haveInitializedOtherSDKs = true
+      initializeCallingSdk(callingConfig, coreSDK).catch((err) => {
+        // eslint-disable-next-line no-console
+        console.warn('Error initializing CallingSDK', err)
+      })
+    }
+  },
+  onNetworkConnection: (event) => {
+    setNetworkConnectionText(event.networkState)
+  },
+  onWebsocketConnection: (event) => {
+    setWebsocketStatusText(event.websocketState)
+  },
+}
+
+///////////////////////////////////////////////
+// Puts message text in the 'Connection Status' text box
+function setConnectionStatusText(msg) {
+  const statusTextEle = document.getElementById('connectionStatus')
+  if (statusTextEle) {
+    statusTextEle.value = msg
+    if (msg === ConnectionStates.CONNECTED) {
+      statusTextEle.className = 'ok'
+    } else {
+      statusTextEle.className = ''
+    }
+  }
+}
+
+///////////////////////////////////////////////
+// Puts message text into the 'InfoText' text box
+function setInfoText(msg) {
+  const infoTextBox = document.getElementById('infoText')
+  if (infoTextBox) {
+    infoTextBox.innerHTML = msg
+  }
+}
+
+///////////////////////////////////////////////
+// Displays the current network connection text
+function setNetworkConnectionText(status) {
+  const networkConStatusEle = document.getElementById('onlineStatus')
+  if (networkConStatusEle) {
+    networkConStatusEle.value = status
+    if (status === 'onLine') {
+      networkConStatusEle.className = 'ok'
+    } else {
+      networkConStatusEle.className = 'error'
+    }
+  }
+}
+
+///////////////////////////////////////////////
+// Displays the current WebSocket connection text
+function setWebsocketStatusText(status) {
+  const networkConStatusEle = document.getElementById('websocketStatus')
+  if (networkConStatusEle) {
+    networkConStatusEle.value = status
+    if (status === 'open') {
+      networkConStatusEle.className = 'ok'
+    } else {
+      networkConStatusEle.className = 'error'
+    }
+  }
+}
+
+///////////////////////////////////////////////
+// Allows html button event handler to call CPaaS Sign-In
+export const userSignIn = () => {
+  if (regMgr.getConnectionState() === ConnectionStates.NEW) {
+    regMgr.cpaasSignIn()
+  }
+}
+
+///////////////////////////////////////////////
+// Allows html button event handler to call CPaaS Sign-Out
+export const userSignOut = async () => {
+  if (regMgr.getConnectionState() !== ConnectionStates.NEW) {
+    await regMgr.disconnect()
+  }
+}
+
+///////////////////////////////////////////////
+// Reads and displays the account line information
+export const getAllAccountLines = async () => {
+  let accountLinesStr = ''
+  if ([ConnectionStates.CONNECTED].includes(regMgr.getConnectionState())) {
+    const accountLines = regMgr.getAllLines()
+
+    for (const line of accountLines) {
+      accountLinesStr += `msisdn: ${line.msisdn}, registered: ${line.regStatus ? 'true' : 'false'}\r\n`
+    }
+  }
+  setInfoText(accountLinesStr)
+  return Promise.resolve()
+}
+
+      const WORKING = 'working...'
+      const CALL = 'Call'
+      const END = 'End'
+      const CALLING = 'Calling...'
+      const MUTE = 'Mute'
+      const UNMUTE = 'Unmute'
+      const HOLD = 'Hold'
+      const RESUME = 'Resume'
+      const DISCONNECTED = 'disconnected'
+
+      // Setup event listeners for the html buttons
+      const siButton = document.getElementById('signInButton')
+      if (siButton) {
+        siButton.addEventListener('click', userSignIn)
+      }
+      const soButton = document.getElementById('signOutButton')
+      if (soButton) {
+        soButton.addEventListener('click', userSignOut)
+      }
+
+      /////////////////////////////////////////////////////////
+      // Call Handlers
+      const callButton = document.getElementById('callButton')
+      if (callButton) {
+        callButton.addEventListener('click', () => {
+          const fromNumberSelectEle = document.getElementById('fromNumberSelect')
+          const selectedOptions = fromNumberSelectEle.selectedOptions
+          let fromNumber
+          if (selectedOptions && selectedOptions[0]) {
+            fromNumber = selectedOptions[0].innerText
+          }
+          if (!fromNumber) {
+            console.warn('Cannot determine fromNumber from selection element')
+            // Calling code will default to using the first line of available lines
+          }
+          const toNumberEle = document.getElementById('toNumberInput')
+          if (toNumberEle) {
+            const toNumber = toNumberEle.value
+            callButton.setAttribute('disabled', 'true')
+            // if we don't define the 'fromNumber' parameter, then by default the
+            // lib will use our first number
+            makeOutgoingCall(toNumber, fromNumber, false)
+              .then((ac) => {
+                setActiveCall(ac)
+              })
+              .catch((err) => {
+                console.warn('Error making call', err)
+                resetButtonDefaults()
+              })
+          }
+        })
+      }
+
+      /////////////////////////////////////////
+      const endButton = document.getElementById('endButton')
+      if (endButton) {
+        endButton.addEventListener('click', () => {
+          const activeCall = getActiveCall()
+          if (activeCall) {
+            endCallHandler(activeCall.getNetworkCallId())
+            resetButtonDefaults()
+          }
+        })
+      }
+
+      /////////////////////////////////////////
+      const muteButton = document.getElementById('muteButton')
+      if (muteButton) {
+        muteButton.addEventListener('click', () => {
+          if (muteButton.innerText !== WORKING) {
+            const activeCall = getActiveCall()
+            if (activeCall) {
+              muteButton.innerText = WORKING
+              muteCallHandler(activeCall.getNetworkCallId()).then((isMuted) => {
+                if (isMuted) {
+                  muteButton.innerText = UNMUTE
+                } else {
+                  muteButton.innerText = MUTE
+                }
+              })
+            }
+          }
+        })
+      }
+
+      /////////////////////////////////////////
+      const holdButton = document.getElementById('holdButton')
+      if (holdButton) {
+        holdButton.addEventListener('click', () => {
+          if (holdButton.innerText !== WORKING) {
+            const activeCall = getActiveCall()
+            if (activeCall) {
+              holdButton.innerText = WORKING
+              holdCallHandler(activeCall.getNetworkCallId()).finally(() => {
+                holdButton.innerText = activeCall.isOnHold() ? RESUME : HOLD
+              })
+            }
+          }
+        })
+      }
+
+      const callStatusInput = document.getElementById('callStatus')
+      if (callStatusInput) {
+        callStatusInput.addEventListener('change', () => {
+          if (callStatusInput.value === DISCONNECTED && callButton) {
+            callButton.removeAttribute('disabled')
+          }
+        })
+      }
+
+      /////////////////////////////////
+      function resetButtonDefaults() {
+        const activeCall = getActiveCall()
+        if (muteButton) {
+          muteButton.innerText = activeCall?.isMuted() ? UNMUTE : MUTE
+        }
+        if (holdButton) {
+          holdButton.innerText = activeCall?.isOnHold() ? RESUME : HOLD
+        }
+        if (callButton) {
+          callButton.removeAttribute('disabled')
+        }
+      }
+
+      resetButtonDefaults()
+
+      // Jump into the local app code
+      startApp()
+    </script>
   </body>
 </html>

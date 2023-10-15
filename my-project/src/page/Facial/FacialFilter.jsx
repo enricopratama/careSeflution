@@ -3,6 +3,7 @@
 import { AiFillCheckCircle } from "react-icons/ai"
 import { useState } from "react"
 import { RadioGroup } from "@headlessui/react"
+import { Link } from "react-router-dom"
 
 //progress bar
 
@@ -201,12 +202,12 @@ const TrainingLearningPath = () => {
                   </button>
                 )}
                 {step === 3 && (
-                  <button
+                  <Link to = "/result"
                     className="text-base bg-blue-800 px-6 py-3 rounded-lg text-white hover:bg-blue-800"
                     onClick={handleNext}
                   >
                     Submit
-                  </button>
+                  </Link>
                 )}
               </div>
             </div>
