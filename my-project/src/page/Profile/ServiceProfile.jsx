@@ -6,11 +6,10 @@ const product = {
   href: "#",
   price: "$220",
   description:
-    "Don't compromise on snack-carrying capacity with this lightweight and spacious bag.",
+    "I have been a professional hair stylist for 20 years now. I am based in Seattle, WA, but open to travel.",
   imageSrc:
-    "https://tailwindui.com/img/ecommerce-images/product-page-04-featured-product-shot.jpg",
-  imageAlt:
-    "Model wearing light green backpack with black canvas straps and front zipper pouch.",
+    "https://images.pexels.com/photos/7440130/pexels-photo-7440130.jpeg?auto=compress&cs=tinysrgb&w=800",
+
 
   sizes: [
     { name: "18L", description: "Perfect for a reasonable amount of snacks." },
@@ -58,7 +57,7 @@ const ServiceProfile = () => {
 
           {/* Product image */}
           <div className="ml-4">
-            <div className="overflow-hidden rounded-lg">
+            <div className=" rounded-lg">
               <img
                 src={product.imageSrc}
                 alt={product.imageAlt}
@@ -81,8 +80,7 @@ const ServiceProfile = () => {
             About Stephanny
           </div>
           <div className="text-base text-gray-500 text-left mt-2">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis,
-            magni!
+          I can work with any types of hair! Free consultations available by clicking on the pink call icon below.
           </div>
         </div>
       </div>

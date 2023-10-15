@@ -1,4 +1,5 @@
-import { BsFillBagHeartFill } from "react-icons/bs"
+import { PiHandHeartBold } from "react-icons/pi"
+
 
 export default function Example() {
   return (
@@ -13,7 +14,7 @@ export default function Example() {
         */}
       <div className="flex flex-1 flex-col justify-center  bg-beige-500">
         <div className="mt-10">
-          <BsFillBagHeartFill
+          <PiHandHeartBold
             className="h-24 mx-auto text-blue-500 fill-blue-500 "
             src="./assets/logo.png"
             size={72}
