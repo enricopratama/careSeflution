@@ -2,6 +2,7 @@ import React from "react"
 import { AiFillStar } from "react-icons/ai"
 import { FaHeart } from "react-icons/fa"
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 const people = [
   {
@@ -27,7 +28,7 @@ const people = [
 
 const FilterResult = () => {
   return (
-    <div className="bg-white py-24 sm:py-32">
+    <Link to="/profile" className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -81,7 +82,7 @@ const FilterResult = () => {
           })}
         </ul>
       </div>
-    </div>
+    </Link>
   )
 }
 
