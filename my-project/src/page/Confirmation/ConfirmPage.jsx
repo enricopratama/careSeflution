@@ -28,15 +28,10 @@ const categoryOptions = [
   { name: "5:00 PM", inStock: true },
   { name: "6:00 PM", inStock: true },
   { name: "7:00 PM", inStock: true },
-
-
-
 ]
 
 // step 3 options radio button
-const levelOptions = [
-
-]
+const levelOptions = []
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
@@ -208,7 +203,8 @@ const Filter = () => {
                   </button>
                 )}
                 {step === 3 && (
-                  <Link to = "/result"
+                  <Link
+                    to="/"
                     className="text-base bg-blue-800 px-6 py-3 rounded-lg text-white hover:bg-blue-800"
                     onClick={handleNext}
                   >
@@ -274,7 +270,8 @@ const Step2 = ({ cat, setCat }) => {
       {/* progress bar */}
 
       <div className="text-2xl text-black font-bold mb-6">
-Select your preferred time      </div>
+        Select your preferred time{" "}
+      </div>
       <div className="">
         <RadioGroup value={cat} onChange={setCat} className="mt-2">
           <RadioGroup.Label className="sr-only">
@@ -316,8 +313,8 @@ const Step3 = ({ level, setLevel }) => {
       {/* progress bar */}
 
       <div className="text-2xl text-black font-bold mb-6">
-      You're all set!    <br>
-      </br>Your specialist will keep in touch with you shortly.
+        You're all set! <br></br>Your specialist will be in touch with you
+        shortly.
       </div>
       <div className="">
         <RadioGroup value={level} onChange={setLevel} className="mt-2">

@@ -1,5 +1,6 @@
 import React from "react"
 import { AiOutlinePhone } from "react-icons/ai"
+import { Link } from "react-router-dom"
 
 const product = {
   name: "Stephanny",
@@ -9,7 +10,6 @@ const product = {
     "I have been a professional hair stylist for 20 years now. I am based in Seattle, WA, but open to travel.",
   imageSrc:
     "https://images.pexels.com/photos/7440130/pexels-photo-7440130.jpeg?auto=compress&cs=tinysrgb&w=800",
-
 
   sizes: [
     { name: "18L", description: "Perfect for a reasonable amount of snacks." },
@@ -67,9 +67,12 @@ const ServiceProfile = () => {
           </div>
         </div>
         <div className="grid grid-cols-2 gap-2 justify-evenly mt-4">
-          <button className="bg-blue-500 text-slate-800 rounded-md p-2 hover:bg-blue-800 ">
+          <Link
+            to="/confirmation"
+            className="bg-blue-500 text-slate-800 rounded-md p-2 hover:bg-blue-800 "
+          >
             Book Now!
-          </button>
+          </Link>
           <button className="flex hover:bg-pink-300 border-pink-500 border-2 rounded-md bg-pink-100 py-2 justify-center">
             Consult
             <AiOutlinePhone className="fill-pink-500 ml-2" size={22} />
@@ -80,7 +83,8 @@ const ServiceProfile = () => {
             About Stephanny
           </div>
           <div className="text-base text-gray-500 text-left mt-2">
-          I can work with any types of hair! Free consultations available by clicking on the pink call icon below.
+            I can work with any types of hair! Free consultations available by
+            clicking on the pink call icon below.
           </div>
         </div>
       </div>
