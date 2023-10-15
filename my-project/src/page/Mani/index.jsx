@@ -1,6 +1,6 @@
-import ManiFilter from "./HaircutFilter"
+import ManiFilter from "./ManiFilter"
 
-const Haircut = () => {
+const Mani = () => {
   return (
     <div>
       <ManiFilter />
@@ -8,4 +8,4 @@ const Haircut = () => {
   )
 }
 
-export default Haircut
+export default Mani
